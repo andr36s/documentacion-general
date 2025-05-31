@@ -1,0 +1,17 @@
+header nav {
+    background-color: #3e7988; 
+}
+
+.navbar-brand {
+    color: aliceblue;
+}
+
+.container {
+    margin: 10%;
+    position: relative;
+  }
+
+.scrollspy {
+    overflow-y: scroll;
+    height: 400px;
+}

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar fixed-top">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Fixed top</a>
+            </div>
+          </nav>
+    </header>
+
+    <div class="container">
+        <div class="card mb-3">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+        </div>
+        <img src="..." class="card-img-bottom" alt="...">
+        </div>
+    </div>
+
+      <div class="container">
+        <div class="row scrollspy">
+            <div class="col-4">
+                <nav id="navbar-example3" class="h-100 flex-column align-items-stretch pe-4 border-end">
+                  <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#item-1">Item 1</a>
+                    <nav class="nav nav-pills flex-column">
+                      <a class="nav-link ms-3 my-1" href="#item-1-1">Item 1-1</a>
+                      <a class="nav-link ms-3 my-1" href="#item-1-2">Item 1-2</a>
+                    </nav>
+                    <a class="nav-link" href="#item-2">Item 2</a>
+                    <a class="nav-link" href="#item-3">Item 3</a>
+                    <nav class="nav nav-pills flex-column">
+                      <a class="nav-link ms-3 my-1" href="#item-3-1">Item 3-1</a>
+                      <a class="nav-link ms-3 my-1" href="#item-3-2">Item 3-2</a>
+                    </nav>
+                  </nav>
+                </nav>
+              </div>
+            
+              <div class="col-8">
+                <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true" class="scrollspy-example-2" tabindex="0">
+                  <div id="item-1">
+                    <h4>Item 1</h4>
+                    <p>...</p>
+                  </div>
+                  <div id="item-1-1">
+                    <h5>Item 1-1</h5>
+                    <p>...</p>
+                  </div>
+                  <div id="item-1-2">
+                    <h5>Item 1-2</h5>
+                    <p>...</p>
+                  </div>
+                  <div id="item-2">
+                    <h4>Item 2</h4>
+                    <p>...</p>
+                  </div>
+                  <div id="item-3">
+                    <h4>Item 3</h4>
+                    <p>...</p>
+                  </div>
+                  <div id="item-3-1">
+                    <h5>Item 3-1</h5>
+                    <p>...</p>
+                  </div>
+                  <div id="item-3-2">
+                    <h5>Item 3-2</h5>
+                    <p>...</p>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="container">
+        <h1 class="text-center">MANIPULACION DEL DOM</h1>
+        <div class="accordion" id="">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Acceder a nodos
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>Métodos y propiedades que te permiten interactuar con los elementos HTML.</strong> 
+                  <ul type="disc">
+                    <li><strong>.childElementCount</strong> -> Obtiene el numero de elementos hijos de un nodo.<br>
+                        &emsp;<b>~</b> Ejemplo los hijos dentro de un div con &lt;p&gt;, &lt;p&gt; y &lt;span&gt; devuelve 3.
+                    </li>
+                    <li><strong>.children</strong> -> Devuelve los nodos hijos que son etiquetas HTML.<br>
+                        &emsp;<b>~</b> Puede devolverlos todos o uno en especifico .children[1]
+                    </li>
+                    <li><strong>.parentElement</strong> -> Se utiliza para acceder al elemento padre de un nodo, se puede usar varias veces de seguido.
+                    </li>
+                    <li><strong>.nextElementSibling</strong> -> Se utiliza para acceder al hermano nodo siguiente de un elemento.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Leer nodos
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong>Acceder al contenido o a las propiedades de un nodo.</strong> 
+                    <ul type="disc">
+                      <li><strong>.getElementById('id')</strong> -> Obtener un elemento por su ID.
+                      </li>
+                      <li><strong>.getElementsByTagName('tagName')</strong> -> Obtener un elemento por el nombre de la etiqueta.
+                      </li>
+                      <li><strong>.getElementsByClassName('className')</strong> -> Obtener un elemento por el nombre de la clase.
+                      </li>
+                      <li><strong>.querySelector('selector')</strong> -> Selecciona el primer elemento que coincida con el selector CSS.<br>
+                        &emsp;<b>~</b> Puede seleccionar combinaciones complejas de elementos, como .mi-clase > p:first-child.<br>
+                        &emsp;<b>~</b> Usa la misma sintaxis que CSS.<br>
+                        &emsp;<b>~</b> Ideal para seleccionar un único elemento rápidamente.<br>
+                        &emsp;<b>~</b> '>' Es clave para garantizar que tu selección sea específica y solo abarque los hijos directos del elemento padre. Para evitar seleccionar elementos a niveles más profundos del DOM.<br>
+                        &emsp;<b>~</b> Para etiqueta solo el nombre, # para id, . para class, etc.
+                      </li>
+                      <li><strong>.querySelectorAll('selector')</strong> -> Selecciona todos los elementos que coincidan con el selector CSS.<br>
+                        &emsp;<b>~</b> Trae una lista de nodos, no una colección de datos.<br>
+                        &emsp;<b>~</b> Puedes usar métodos como forEach, for...of, pero no métodos de array como map o filter.<br>
+                        &emsp;<b>~</b> La NodeList es estática, no se actualiza automáticamente.<br>
+                        &emsp;<b>~</b> Es útil para aplicar cambios o realizar operaciones en varios elementos a la vez.<br>
+                        &emsp;<b>~</b> Para etiqueta solo el nombre, # para id, . para class, etc.
+                      </li>
+                      <li><strong>.createNodeIterator()</strong> 
+                      </li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Crear nodos
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong></strong> 
+                    <ul type="disc">
+                      <li><strong></strong> <br>
+                          &emsp;<b>~</b>
+                      </li>
+                      <li><strong></strong> <br>
+                          &emsp;<b>~</b>
+                      </li>
+                      <li><strong></strong> <br>
+                        &emsp;<b>~</b>
+                      </li>
+                      <li><strong></strong> <br>
+                        &emsp;<b>~</b>
+                      </li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Accordion Item #3
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                      <strong></strong> 
+                      <ul type="disc">
+                        <li><strong></strong> <br>
+                            &emsp;<b>~</b>
+                        </li>
+                        <li><strong></strong> <br>
+                            &emsp;<b>~</b>
+                        </li>
+                        <li><strong></strong> <br>
+                          &emsp;<b>~</b>
+                        </li>
+                        <li><strong></strong> <br>
+                          &emsp;<b>~</b>
+                        </li>
+                      </ul>
+                  </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Accordion Item #3
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                      <strong></strong> 
+                      <ul type="disc">
+                        <li><strong></strong> <br>
+                            &emsp;<b>~</b>
+                        </li>
+                        <li><strong></strong> <br>
+                            &emsp;<b>~</b>
+                        </li>
+                        <li><strong></strong> <br>
+                          &emsp;<b>~</b>
+                        </li>
+                        <li><strong></strong> <br>
+                          &emsp;<b>~</b>
+                        </li>
+                      </ul>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+
+    <footer>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
